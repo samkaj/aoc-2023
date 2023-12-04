@@ -1,12 +1,11 @@
 #include "../lib/reader.h"
-#include "one.h"
 #include <string>
 #include <unordered_map>
 
 int find_num(std::string line,
              std::unordered_map<std::string, std::string> patterns);
 
-void one() {
+int main() {
   auto lines = get_lines("/home/samkaj/code/aoc-2023/src/dec01/in.txt");
   std::unordered_map<std::string, std::string> nums;
   // Part one
@@ -41,6 +40,7 @@ void one() {
     tot += find_num(line, nums);
   }
   printf("Part two: %d\n", tot);
+  return 0;
 }
 
 int find_num(std::string line,
